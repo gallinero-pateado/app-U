@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class CustomNavigationBar extends StatelessWidget {
   final BuildContext context;
 
-  const CustomNavigationBar({Key? key, required this.context}) : super(key: key);
+  const CustomNavigationBar({super.key, required this.context});
 
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
       color: Colors.lightBlue, // Cambia el color de fondo a celeste
-      child: Container(
+      child: SizedBox(
         height: kBottomNavigationBarHeight,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

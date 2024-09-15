@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:segurapp/services/firebase.dart';
-import 'package:segurapp/Screens/ListPage_Deploy.dart';
+//import 'package:segurapp/Screens/ListPage_Deploy.dart';
 
 class Feed extends StatefulWidget {
   const Feed({super.key,});
@@ -327,4 +327,4 @@ class _FeedState extends State<Feed> {
       ),
     );
   }
-}
+}*/
