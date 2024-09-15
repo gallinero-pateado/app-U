@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "758093226180",
+    "project_id": "prueba-2-35f87",
+    "storage_bucket": "prueba-2-35f87.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758093226180:android:0499358a50f0d2c3242991",
+        "android_client_info": {
+          "package_name": "com.example.utemlink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMVma3ePwK1PmL5K3p3wMEKrb-Dp5GKnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
