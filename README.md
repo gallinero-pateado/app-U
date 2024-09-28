@@ -1,9 +1,8 @@
-# Super prueba
+# Aplicacion movil
+Clon de un repositorio con login y registro.
 
-Repositorio de prueba. 
+Tiene autenticacion con firebase y conecta a la base de datos.
 
 ## Comentarios
-
-huh
-
-
+Falta vincularlo con el backend.
+Falta que agregue los datos a la base de datos
