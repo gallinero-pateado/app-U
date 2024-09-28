@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print, use_build_context_synchronously
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:segurapp/services/firebase_auth_services.dart';
+import 'package:Ulink/services/supabase_auth_services.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class RegistroPage extends StatefulWidget {
   const RegistroPage({super.key});
@@ -12,7 +12,7 @@ class RegistroPage extends StatefulWidget {
 }
 
 class _RegistroPageState extends State<RegistroPage> {
-  final FirebaseAuthServices _auth = FirebaseAuthServices();
+  final SupabaseAuthServices _auth = SupabaseAuthServices();
   final _formKey = GlobalKey<FormState>();
   final _usuarioController = TextEditingController();
   final _apellidoController = TextEditingController();
@@ -142,13 +142,17 @@ class _RegistroPageState extends State<RegistroPage> {
                             if (context.mounted) {
                               Navigator.pop(context);
                               ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('Usuario registrado con éxito')),
+                                const SnackBar(
+                                    content:
+                                        Text('Usuario registrado con éxito')),
                               );
                             }
                           } else {
                             if (context.mounted) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('Error al registrar usuario')),
+                                const SnackBar(
+                                    content:
+                                        Text('Error al registrar usuario')),
                               );
                             }
                           }
@@ -204,38 +208,27 @@ class _RegistroPageState extends State<RegistroPage> {
         print('Error al registrar usuario');
         return false;
       }
-    } on FirebaseAuthException catch (e) {
-      String errorMessage;
-      switch (e.code) {
-        case 'email-already-in-use':
-          errorMessage = 'El correo electrónico ya está en uso.';
-          break;
-        case 'invalid-email':
-          errorMessage = 'El correo electrónico no es válido.';
-          break;
-        case 'operation-not-allowed':
-          errorMessage = 'Operación no permitida.';
-          break;
-        case 'weak-password':
-          errorMessage = 'La contraseña es demasiado débil.';
-          break;
-        default:
-          errorMessage = 'Ocurrió un error desconocido.';
-      }
-      print('Error de registro: ${e.message}');
-      if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error de registro: $errorMessage')),
-        );
-      }
-      return false;
     } catch (e) {
-      print('Error de registro: $e');
-      if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error de registro: $e')),
-        );
+      String errorMessage = 'Ocurrió un error desconocido.';
+      if (e is AuthException) {
+        switch (e.statusCode) {
+          case 'email-already-in-use':
+            errorMessage = 'El correo electrónico ya está en uso.';
+            break;
+          case 'invalid-email':
+            errorMessage = 'El correo electrónico no es válido.';
+            break;
+          case 'operation-not-allowed':
+            errorMessage = 'Operación no permitida.';
+            break;
+          case 'weak-password':
+            errorMessage = 'La contraseña es demasiado débil.';
+            break;
+          default:
+            errorMessage = 'Ocurrió un error desconocido.';
+        }
       }
+      print('Error de registro: $errorMessage');
       return false;
     }
   }

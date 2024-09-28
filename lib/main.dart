@@ -1,22 +1,13 @@
 import 'package:flutter/material.dart';
 
-//Importaciones para f
-import 'package:firebase_core/firebase_core.dart';
+//Importaciones para Supabase
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-
 //Paginas de la aplicación
-import 'firebase_options.dart';
-import 'package:segurapp/Screens/login.dart';
-import 'package:segurapp/Screens/registro.dart';
+import 'package:Ulink/Screens/login.dart';
+import 'package:Ulink/Screens/registro.dart';
 
-
-void main() async{
-  
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+void main() async {
   await Supabase.initialize(
     url: 'aws-0-sa-east-1.pooler.supabase.com',
     anonKey: 'fytxid-0xamfY-kersev',

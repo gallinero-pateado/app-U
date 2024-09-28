@@ -1,9 +1,6 @@
 // ignore_for_file: avoid_print
-
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:segurapp/services/firebase_auth_services.dart';
-
+import 'package:Ulink/services/supabase_auth_services.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -14,7 +11,7 @@ class LoginPage extends StatefulWidget {
 
 class LoginPageState extends State<LoginPage> {
   GlobalKey<FormState> keyForm = GlobalKey();
-  final FirebaseAuthServices _auth = FirebaseAuthServices();
+  final SupabaseAuthServices _auth = SupabaseAuthServices();
   final _emailController = TextEditingController();
   final _contrasenaController = TextEditingController();
   bool _passwordVisible = false;
@@ -30,7 +27,7 @@ class LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'SegurApp',
+          'Ulink',
           textAlign: TextAlign.center,
         ),
         centerTitle: true, // Centrar el título en la AppBar
@@ -54,24 +51,28 @@ class LoginPageState extends State<LoginPage> {
                     // ignore: use_build_context_synchronously
                     Navigator.pushNamed(context, '/mainScreen');
                   } else {
-                    if(context.mounted) {
+                    if (context.mounted) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Error al autenticar usuario')),
+                        const SnackBar(
+                            content: Text('Error al autenticar usuario')),
                       );
                     }
                   }
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Por favor ingrese los datos correctos')),
+                    const SnackBar(
+                        content: Text('Por favor ingrese los datos correctos')),
                   );
                 }
               },
-                style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white, backgroundColor: Colors.lightBlue, 
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0), // Bordes redondeados
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.lightBlue,
+                shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.circular(30.0), // Bordes redondeados
+                ),
               ),
-  ),
               child: const Text("Iniciar sesión"),
             ),
             const SizedBox(height: 20),
@@ -165,7 +166,7 @@ class LoginPageState extends State<LoginPage> {
     String password = _contrasenaController.text;
 
     try {
-      User? user = await _auth.signInWithEmailAndPassword(email, password);
+      final user = await _auth.signInWithEmailAndPassword(email, password);
       if (user != null) {
         print('Usuario autenticado correctamente');
         return true;
