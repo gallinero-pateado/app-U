@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//Importaciones para
+//Importaciones para f
 import 'package:firebase_core/firebase_core.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
