@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
-import 'package:Ulink/services/supabase_auth_services.dart';
+import 'package:Ulink/services/auth_services.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,8 +11,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class LoginPageState extends State<LoginPage> {
-  GlobalKey<FormState> keyForm = GlobalKey();
-  final SupabaseAuthServices _auth = SupabaseAuthServices();
+  final GlobalKey<FormState> keyForm = GlobalKey();
+  final AuthService _authService = AuthService();
   final _emailController = TextEditingController();
   final _contrasenaController = TextEditingController();
   bool _passwordVisible = false;
@@ -23,6 +24,13 @@ class LoginPageState extends State<LoginPage> {
   }
 
   @override
+  void dispose() {
+    _emailController.dispose();
+    _contrasenaController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -30,7 +38,7 @@ class LoginPageState extends State<LoginPage> {
           'Ulink',
           textAlign: TextAlign.center,
         ),
-        centerTitle: true, // Centrar el título en la AppBar
+        centerTitle: true,
         backgroundColor: Colors.blue,
       ),
       body: SingleChildScrollView(
@@ -48,7 +56,6 @@ class LoginPageState extends State<LoginPage> {
                 if (keyForm.currentState!.validate()) {
                   bool success = await _signIn();
                   if (success) {
-                    // ignore: use_build_context_synchronously
                     Navigator.pushNamed(context, '/mainScreen');
                   } else {
                     if (context.mounted) {
@@ -99,7 +106,7 @@ class LoginPageState extends State<LoginPage> {
     );
   }
 
-  formItemsDesign(icon, item) {
+  Widget formItemsDesign(IconData icon, Widget item) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 7),
       child: Card(child: ListTile(leading: Icon(icon), title: item)),
@@ -118,12 +125,11 @@ class LoginPageState extends State<LoginPage> {
             ),
             keyboardType: TextInputType.emailAddress,
             maxLength: 32,
-            autofocus: true, // Habilitar autofocus aquí
+            autofocus: true,
             validator: (value) {
               if (value!.isEmpty) {
                 return 'Por favor ingrese su correo electrónico';
               }
-              // Validar formato de correo electrónico
               if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
                 return 'Por favor ingrese un correo electrónico válido';
               }
@@ -135,7 +141,7 @@ class LoginPageState extends State<LoginPage> {
           Icons.remove_red_eye,
           TextFormField(
             controller: _contrasenaController,
-            obscureText: !_passwordVisible, // Usar la variable para controlar
+            obscureText: !_passwordVisible,
             decoration: InputDecoration(
               labelText: 'Contraseña',
               suffixIcon: IconButton(
@@ -166,7 +172,8 @@ class LoginPageState extends State<LoginPage> {
     String password = _contrasenaController.text;
 
     try {
-      final user = await _auth.signInWithEmailAndPassword(email, password);
+      final user =
+          await _authService.signInWithEmailAndPassword(email, password);
       if (user != null) {
         print('Usuario autenticado correctamente');
         return true;

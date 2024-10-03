@@ -1,8 +1,7 @@
 // ignore_for_file: avoid_print, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:Ulink/services/supabase_auth_services.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:Ulink/services/auth_services.dart';
 
 class RegistroPage extends StatefulWidget {
   const RegistroPage({super.key});
@@ -12,7 +11,7 @@ class RegistroPage extends StatefulWidget {
 }
 
 class _RegistroPageState extends State<RegistroPage> {
-  final SupabaseAuthServices _auth = SupabaseAuthServices();
+  final AuthService _authService = AuthService();
   final _formKey = GlobalKey<FormState>();
   final _usuarioController = TextEditingController();
   final _apellidoController = TextEditingController();
@@ -200,8 +199,10 @@ class _RegistroPageState extends State<RegistroPage> {
     String password = _contrasenaController.text;
 
     try {
-      User? user = await _auth.signUpWithEmailAndPassword(email, password);
-      if (user != null) {
+      final result =
+          await _authService.signUpWithEmailAndPassword(email, password);
+
+      if (result != null) {
         print('Usuario registrado con éxito');
         return true;
       } else {
@@ -209,26 +210,7 @@ class _RegistroPageState extends State<RegistroPage> {
         return false;
       }
     } catch (e) {
-      String errorMessage = 'Ocurrió un error desconocido.';
-      if (e is AuthException) {
-        switch (e.statusCode) {
-          case 'email-already-in-use':
-            errorMessage = 'El correo electrónico ya está en uso.';
-            break;
-          case 'invalid-email':
-            errorMessage = 'El correo electrónico no es válido.';
-            break;
-          case 'operation-not-allowed':
-            errorMessage = 'Operación no permitida.';
-            break;
-          case 'weak-password':
-            errorMessage = 'La contraseña es demasiado débil.';
-            break;
-          default:
-            errorMessage = 'Ocurrió un error desconocido.';
-        }
-      }
-      print('Error de registro: $errorMessage');
+      print('Error de registro: $e');
       return false;
     }
   }
