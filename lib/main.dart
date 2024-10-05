@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 //Importaciones para Supabase
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-//Paginas de la aplicación
+//Pantallas de la aplicación
 import 'package:Ulink/Screens/login.dart';
 import 'package:Ulink/Screens/registro.dart';
+import 'package:Ulink/Screens/recover_password.dart';
 
 void main() async {
   // Inicialización de Supabase
@@ -30,6 +31,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => const LoginPage(), // Pantalla de login
         '/registro': (context) =>
             const RegisterScreen(), // Pantalla de registro
+        '/recuperar': (context) =>
+            const RecoverPasswordPage(), // Pantalla de recuperar contraseña
       },
     );
   }

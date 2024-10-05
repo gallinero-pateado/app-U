@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:Ulink/services/auth_services.dart';
+import 'recover_password.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -118,7 +119,12 @@ class LoginPageState extends State<LoginPage> {
                       const SizedBox(height: 10),
                       GestureDetector(
                         onTap: () {
-                          // Acción de olvido de contraseña
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const RecoverPasswordPage()),
+                          );
                         },
                         child: const Text(
                           '¿Olvidaste tu contraseña?',
