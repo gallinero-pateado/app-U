@@ -4,15 +4,20 @@ import 'package:http/http.dart' as http;
 class AuthService {
   final String _baseUrl = 'aws-0-sa-east-1.pooler.supabase.com';
 
-  // Registro de usuario con email y contraseña
-  Future<Map<String, dynamic>?> signUpWithEmailAndPassword(
-      String email, String password) async {
+  // Registro de usuario con nombres, apellidos, email y contraseña
+  Future<Map<String, dynamic>?> signUpWithDetails(
+      String firstName, String lastName, String email, String password) async {
     final url = Uri.parse('$_baseUrl/register');
     try {
       final response = await http.post(
         url,
         headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({'email': email, 'password': password}),
+        body: jsonEncode({
+          'first_name': firstName,
+          'last_name': lastName,
+          'email': email,
+          'password': password
+        }),
       );
 
       if (response.statusCode == 200) {

@@ -246,7 +246,7 @@
          "campaigns": [ {
             "campaignId": 1,
             "description": "Growth Engine demo campaign",
-            "enabled": true,
+            "enabled": false,
             "surface": {
                "properties": {
                   "isFullScreen": true,
@@ -272,12 +272,40 @@
             "trigger": {
                "type": "appStart"
             }
+         }, {
+            "campaignId": 2,
+            "description": "Tampermonkey campaign",
+            "enabled": true,
+            "surface": {
+               "properties": {
+               },
+               "type": "nativeUpsell"
+            },
+            "target": {
+               "targetAppVersion": {
+                  "max": "145.0.0.0",
+                  "min": "130.0.0.0"
+               },
+               "targetChannel": [ "unknown", "canary", "stable" ],
+               "targetDatetime": {
+                  "max": "1 Sep 2025 13:00 GMT",
+                  "min": "1 Sep 2024 13:00 GMT"
+               },
+               "targetOS": [ "Android" ],
+               "targetUserProfile": {
+                  "extension_hub_shown": true,
+                  "extension_hub_shown_after_130": false
+               }
+            },
+            "trigger": {
+               "type": "appStart"
+            }
          } ]
       },
       "effectStrategy": "launch",
       "instanceId": "1bc1928c024e49f4944d0b9ad549e46a",
       "type": "normal",
-      "version": "1001"
+      "version": "1002"
    } ],
-   "version": "202409120001"
+   "version": "202409270001"
 }

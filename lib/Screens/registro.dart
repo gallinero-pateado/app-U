@@ -1,47 +1,22 @@
-// ignore_for_file: avoid_print, use_build_context_synchronously
-
 import 'package:flutter/material.dart';
-import 'package:Ulink/services/auth_services.dart';
+import 'package:Ulink/services/auth_services.dart'; // Servicio de autenticación
 
-class RegistroPage extends StatefulWidget {
-  const RegistroPage({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<RegistroPage> createState() => _RegistroPageState();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _RegistroPageState extends State<RegistroPage> {
-  final AuthService _authService = AuthService();
+class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _usuarioController = TextEditingController();
-  final _apellidoController = TextEditingController();
-  final _telefonoController = TextEditingController();
-  final _emailController = TextEditingController();
-  final _contrasenaController = TextEditingController();
-  final _confirmarContrasenaController = TextEditingController();
+  final AuthService _authService = AuthService();
 
-  @override
-  void dispose() {
-    _usuarioController.dispose();
-    _apellidoController.dispose();
-    _telefonoController.dispose();
-    _emailController.dispose();
-    _contrasenaController.dispose();
-    _confirmarContrasenaController.dispose();
-    super.dispose();
-  }
-
-  Widget formItemsDesign(IconData icon, Widget item) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 7),
-      child: Card(
-        child: ListTile(
-          leading: Icon(icon),
-          title: item,
-        ),
-      ),
-    );
-  }
+  String _firstName = '';
+  String _lastName = '';
+  String _email = '';
+  String _password = '';
+  String _confirmPassword = '';
 
   @override
   Widget build(BuildContext context) {
@@ -49,169 +24,182 @@ class _RegistroPageState extends State<RegistroPage> {
       appBar: AppBar(
         title: const Text(
           'Registro',
-          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.blue, // Color del título
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
+        centerTitle: true, // Centra el título
+        backgroundColor: Colors.white, // Fondo blanco en la barra de navegación
+        elevation: 0, // Sin sombra
+        iconTheme: const IconThemeData(
+            color: Colors.blue), // Ícono de la flecha de regreso en azul
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.all(20.0),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    formItemsDesign(
-                      Icons.person,
-                      TextFormField(
-                        controller: _usuarioController,
-                        decoration: const InputDecoration(
-                          labelText: 'Nombre de usuario',
-                        ),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Por favor ingresa tu nombre de usuario';
-                          }
-                          return null;
-                        },
-                      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildTextField('Nombres', (value) {
+                _firstName = value;
+              }),
+              _buildTextField('Apellidos', (value) {
+                _lastName = value;
+              }),
+              _buildTextField('Email', (value) {
+                _email = value;
+              }),
+              _buildTextField('Contraseña', (value) {
+                _password = value;
+              }, obscureText: true),
+              _buildTextField('Confirmar Contraseña', (value) {
+                _confirmPassword = value;
+              }, obscureText: true),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    _formKey.currentState!.save();
+                    _registerUser();
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.lightBlue, // Botón de registro azul
+                  shape: RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.circular(8.0), // Bordes redondeados
+                  ),
+                ),
+                child: const Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 80.0),
+                  child: Text(
+                    'Registrarse',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
                     ),
-                    formItemsDesign(
-                      Icons.email,
-                      TextFormField(
-                        controller: _emailController,
-                        decoration: const InputDecoration(
-                          labelText: 'Correo electrónico',
-                        ),
-                        keyboardType: TextInputType.emailAddress,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Por favor ingresa tu correo electrónico';
-                          }
-                          if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                            return 'Por favor ingresa un correo electrónico válido';
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                    formItemsDesign(
-                      Icons.lock,
-                      TextFormField(
-                        controller: _contrasenaController,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          labelText: 'Contraseña',
-                        ),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Por favor ingresa tu contraseña';
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                    formItemsDesign(
-                      Icons.lock,
-                      TextFormField(
-                        controller: _confirmarContrasenaController,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          labelText: 'Confirmar contraseña',
-                        ),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Por favor confirma tu contraseña';
-                          }
-                          if (value != _contrasenaController.text) {
-                            return 'Las contraseñas no coinciden';
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () async {
-                        if (_formKey.currentState!.validate()) {
-                          bool success = await _signUp(context);
-                          if (success) {
-                            if (context.mounted) {
-                              Navigator.pop(context);
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                    content:
-                                        Text('Usuario registrado con éxito')),
-                              );
-                            }
-                          } else {
-                            if (context.mounted) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                    content:
-                                        Text('Error al registrar usuario')),
-                              );
-                            }
-                          }
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: Colors.lightBlue,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                      ),
-                      child: const Text('Registrar'),
-                    ),
-                  ],
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 5),
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: RichText(
-                text: const TextSpan(
-                  text: '¿Ya eres miembro? ',
-                  style: TextStyle(color: Colors.black),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: 'Iniciar Sesión',
-                      style: TextStyle(color: Colors.blue),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // No hacer nada de momento
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(
+                      251, 3, 228, 244), // Botón de registro azul
+                  shape: RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.circular(8.0), // Bordes redondeados
+                  ),
+                ),
+                child: const Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 40.0),
+                  child: Text(
+                    'Registrarse como empresa',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
                     ),
-                  ],
+                  ),
                 ),
               ),
-            ),
-          ],
+              const SizedBox(height: 20),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/');
+                },
+                child: Center(
+                  child: RichText(
+                    text: const TextSpan(
+                      text: '¿Ya tienes cuenta? ',
+                      style: TextStyle(color: Colors.black),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: 'Inicia sesión',
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Future<bool> _signUp(BuildContext context) async {
-    String email = _emailController.text;
-    String password = _contrasenaController.text;
+  // Widget para generar los campos de texto
+  Widget _buildTextField(String labelText, Function(String) onSaved,
+      {bool obscureText = false}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: TextFormField(
+        decoration: InputDecoration(
+          labelText: labelText,
+          labelStyle: const TextStyle(
+              color: Colors.lightBlue), // Texto del label en azul claro
+          enabledBorder: OutlineInputBorder(
+            borderSide:
+                const BorderSide(color: Colors.lightBlue), // Borde azul claro
+            borderRadius: BorderRadius.circular(8.0), // Bordes redondeados
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide:
+                const BorderSide(color: Colors.blue), // Borde azul al enfocarse
+            borderRadius: BorderRadius.circular(8.0), // Bordes redondeados
+          ),
+        ),
+        obscureText: obscureText,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Por favor ingrese su $labelText';
+          }
+          return null;
+        },
+        onSaved: (value) {
+          onSaved(value ?? '');
+        },
+      ),
+    );
+  }
 
-    try {
-      final result =
-          await _authService.signUpWithEmailAndPassword(email, password);
+  // Método para registrar al usuario
+  void _registerUser() async {
+    if (_password != _confirmPassword) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Las contraseñas no coinciden')),
+      );
+      return;
+    }
 
-      if (result != null) {
-        print('Usuario registrado con éxito');
-        return true;
-      } else {
-        print('Error al registrar usuario');
-        return false;
-      }
-    } catch (e) {
-      print('Error de registro: $e');
-      return false;
+    // Lógica de autenticación usando AuthService
+    final response = await _authService.signUpWithDetails(
+      _firstName,
+      _lastName,
+      _email,
+      _password,
+    );
+
+    if (response != null) {
+      // Registro exitoso
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Usuario registrado exitosamente')),
+      );
+      Navigator.pushNamed(
+          context, '/login'); // Redirigir a la pantalla de inicio de sesión
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Error al registrar usuario')),
+      );
     }
   }
 }

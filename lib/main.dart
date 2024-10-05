@@ -8,14 +8,14 @@ import 'package:Ulink/Screens/login.dart';
 import 'package:Ulink/Screens/registro.dart';
 
 void main() async {
+  // Inicialización de Supabase
+  WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
     url: 'aws-0-sa-east-1.pooler.supabase.com',
     anonKey: 'fytxid-0xamfY-kersev',
   );
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: MyApp(),
-  ));
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -27,8 +27,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => const LoginPage(),
-        '/registro': (context) => const RegistroPage(),
+        '/': (context) => const LoginPage(), // Pantalla de login
+        '/registro': (context) =>
+            const RegisterScreen(), // Pantalla de registro
       },
     );
   }
