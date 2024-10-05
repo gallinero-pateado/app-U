@@ -1,5 +1,5 @@
-2024/10/05-16:46:11.895 faf0 Reusing MANIFEST C:\Users\byron\AppData\Local\Temp\flutter_tools.8f03bc9e\flutter_tools_chrome_device.951a6d1e\Default\Site Characteristics Database/MANIFEST-000001
-2024/10/05-16:46:11.896 faf0 Recovering log #6
-2024/10/05-16:46:11.896 faf0 (ignoring error) C:\Users\byron\AppData\Local\Temp\flutter_tools.8f03bc9e\flutter_tools_chrome_device.951a6d1e\Default\Site Characteristics Database/000006.log: dropping 82 bytes; Corruption: checksum mismatch
-2024/10/05-16:46:11.896 faf0 Reusing old log C:\Users\byron\AppData\Local\Temp\flutter_tools.8f03bc9e\flutter_tools_chrome_device.951a6d1e\Default\Site Characteristics Database/000006.log 
-2024/10/05-16:46:11.896 faf0 Delete type=0 #3
+2024/10/05-19:50:23.363 3900 Reusing MANIFEST C:\Users\byron\AppData\Local\Temp\flutter_tools.4113e4cf\flutter_tools_chrome_device.76408e7e\Default\Site Characteristics Database/MANIFEST-000001
+2024/10/05-19:50:23.363 3900 Recovering log #6
+2024/10/05-19:50:23.364 3900 (ignoring error) C:\Users\byron\AppData\Local\Temp\flutter_tools.4113e4cf\flutter_tools_chrome_device.76408e7e\Default\Site Characteristics Database/000006.log: dropping 1276 bytes; Corruption: checksum mismatch
+2024/10/05-19:50:23.364 3900 Reusing old log C:\Users\byron\AppData\Local\Temp\flutter_tools.4113e4cf\flutter_tools_chrome_device.76408e7e\Default\Site Characteristics Database/000006.log 
+2024/10/05-19:50:23.364 3900 Delete type=0 #3
