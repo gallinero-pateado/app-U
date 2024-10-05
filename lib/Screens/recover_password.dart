@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:Ulink/services/auth_services.dart';
 
 class RecoverPasswordPage extends StatefulWidget {
   const RecoverPasswordPage({super.key});
@@ -10,6 +11,7 @@ class RecoverPasswordPage extends StatefulWidget {
 class RecoverPasswordPageState extends State<RecoverPasswordPage> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   final TextEditingController _emailController = TextEditingController();
+  final AuthService _authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -65,8 +67,10 @@ class RecoverPasswordPageState extends State<RecoverPasswordPage> {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {
-                    // No hacer nada de momento
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      await _sendRecoveryEmail();
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
@@ -90,5 +94,20 @@ class RecoverPasswordPageState extends State<RecoverPasswordPage> {
         ),
       ),
     );
+  }
+
+  Future<void> _sendRecoveryEmail() async {
+    String email = _emailController.text;
+
+    try {
+      await _authService.verifyEmail(email);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Código de recuperación enviado.')),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error al enviar código de recuperación: $e')),
+      );
+    }
   }
 }

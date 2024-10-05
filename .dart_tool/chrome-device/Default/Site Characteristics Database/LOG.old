@@ -1,4 +1,5 @@
-2024/10/05-16:30:51.046 e864 Reusing MANIFEST C:\Users\byron\AppData\Local\Temp\flutter_tools.f65b5225\flutter_tools_chrome_device.96dd43d6\Default\Site Characteristics Database/MANIFEST-000001
-2024/10/05-16:30:51.047 e864 Recovering log #6
-2024/10/05-16:30:51.047 e864 Reusing old log C:\Users\byron\AppData\Local\Temp\flutter_tools.f65b5225\flutter_tools_chrome_device.96dd43d6\Default\Site Characteristics Database/000006.log 
-2024/10/05-16:30:51.048 e864 Delete type=0 #3
+2024/10/05-16:46:11.895 faf0 Reusing MANIFEST C:\Users\byron\AppData\Local\Temp\flutter_tools.8f03bc9e\flutter_tools_chrome_device.951a6d1e\Default\Site Characteristics Database/MANIFEST-000001
+2024/10/05-16:46:11.896 faf0 Recovering log #6
+2024/10/05-16:46:11.896 faf0 (ignoring error) C:\Users\byron\AppData\Local\Temp\flutter_tools.8f03bc9e\flutter_tools_chrome_device.951a6d1e\Default\Site Characteristics Database/000006.log: dropping 82 bytes; Corruption: checksum mismatch
+2024/10/05-16:46:11.896 faf0 Reusing old log C:\Users\byron\AppData\Local\Temp\flutter_tools.8f03bc9e\flutter_tools_chrome_device.951a6d1e\Default\Site Characteristics Database/000006.log 
+2024/10/05-16:46:11.896 faf0 Delete type=0 #3
