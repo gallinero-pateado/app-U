@@ -1408,3 +1408,90 @@
 2024-10-05T19:28:17.161Z P:65432 T:49100] ModelLoadManager::Stop,Stopped: Edge Tab Group
 2024-10-05T19:28:17.161Z P:65432 T:49100] ModelLoadManager::Stop,Stopped: Edge Wallet
 2024-10-05T19:29:10.845Z P:65432 T:49100] SyncServiceImpl::ResetEngine,Reset engine with reason: 0
+2024-10-05T19:30:51.048Z P:65756 T:62888] SyncServiceImpl::ResetEngine,Reset engine with reason: 8
+2024-10-05T19:30:51.048Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Bookmarks
+2024-10-05T19:30:51.048Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Preferences
+2024-10-05T19:30:51.048Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Passwords
+2024-10-05T19:30:51.048Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Autofill Profiles
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Autofill
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Typed URLs
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Extensions
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Sessions
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Extension settings
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: History Delete Directives
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Device Info
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: User Consents
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Send Tab To Self
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Web Apps
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: History
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Collection
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Edge E Drop
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Edge Hub App Usage
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Edge Tab Group
+2024-10-05T19:30:51.049Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Edge Wallet
+2024-10-05T19:30:51.049Z P:65756 T:62888] SyncServiceImpl::Initialize,SyncState after authenticated was: NotSignedIn
+2024-10-05T19:30:51.233Z P:65756 T:62888] SyncServiceImpl::ResetEngine,Reset engine with reason: 8
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Bookmarks
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Preferences
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Passwords
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Autofill Profiles
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Autofill
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Typed URLs
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Extensions
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Sessions
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Extension settings
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: History Delete Directives
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Device Info
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: User Consents
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Send Tab To Self
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Web Apps
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: History
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Collection
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Edge E Drop
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Edge Hub App Usage
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Edge Tab Group
+2024-10-05T19:30:51.233Z P:65756 T:62888] ModelLoadManager::Stop,Stopped: Edge Wallet
+2024-10-05T19:42:36.002Z P:29172 T:64144] SyncServiceImpl::ResetEngine,Reset engine with reason: 8
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Bookmarks
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Preferences
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Passwords
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Autofill Profiles
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Autofill
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Typed URLs
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Extensions
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Sessions
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Extension settings
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: History Delete Directives
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Device Info
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: User Consents
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Send Tab To Self
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Web Apps
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: History
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Collection
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Edge E Drop
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Edge Hub App Usage
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Edge Tab Group
+2024-10-05T19:42:36.002Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Edge Wallet
+2024-10-05T19:42:36.002Z P:29172 T:64144] SyncServiceImpl::Initialize,SyncState after authenticated was: NotSignedIn
+2024-10-05T19:42:36.178Z P:29172 T:64144] SyncServiceImpl::ResetEngine,Reset engine with reason: 8
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Bookmarks
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Preferences
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Passwords
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Autofill Profiles
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Autofill
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Typed URLs
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Extensions
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Sessions
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Extension settings
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: History Delete Directives
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Device Info
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: User Consents
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Send Tab To Self
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Web Apps
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: History
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Collection
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Edge E Drop
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Edge Hub App Usage
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Edge Tab Group
+2024-10-05T19:42:36.178Z P:29172 T:64144] ModelLoadManager::Stop,Stopped: Edge Wallet
+2024-10-05T19:44:10.233Z P:29172 T:64144] SyncServiceImpl::ResetEngine,Reset engine with reason: 0

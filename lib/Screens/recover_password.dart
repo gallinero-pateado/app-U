@@ -20,7 +20,7 @@ class RecoverPasswordPageState extends State<RecoverPasswordPage> {
           child: Form(
             key: _formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 const SizedBox(height: 40),
                 const Center(
@@ -34,10 +34,19 @@ class RecoverPasswordPageState extends State<RecoverPasswordPage> {
                   ),
                 ),
                 const SizedBox(height: 40),
+                const Text(
+                  'Email',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),
+                ),
+                const SizedBox(height: 10),
                 TextFormField(
                   controller: _emailController,
                   decoration: InputDecoration(
-                    hintText: 'Ingresa tu email',
+                    hintText: 'Email',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
@@ -63,6 +72,7 @@ class RecoverPasswordPageState extends State<RecoverPasswordPage> {
                     foregroundColor: Colors.white,
                     backgroundColor: Colors.blue,
                     padding: const EdgeInsets.symmetric(
+                      horizontal: 30,
                       vertical: 15,
                     ),
                     shape: RoundedRectangleBorder(
@@ -79,13 +89,6 @@ class RecoverPasswordPageState extends State<RecoverPasswordPage> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget formItemsDesign(icon, item) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 7),
-      child: Card(child: ListTile(leading: Icon(icon), title: item)),
     );
   }
 }
