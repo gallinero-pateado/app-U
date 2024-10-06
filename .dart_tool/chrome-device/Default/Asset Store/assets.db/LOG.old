@@ -1,3 +1,5 @@
-2024/10/06-18:42:20.393 14ac Reusing MANIFEST C:\Users\Matias\AppData\Local\Temp\flutter_tools.a24b7055\flutter_tools_chrome_device.7ec1860b\Default\Asset Store\assets.db/MANIFEST-000001
-2024/10/06-18:42:20.398 14ac Recovering log #4
-2024/10/06-18:42:20.400 14ac Reusing old log C:\Users\Matias\AppData\Local\Temp\flutter_tools.a24b7055\flutter_tools_chrome_device.7ec1860b\Default\Asset Store\assets.db/000004.log 
+2024/10/06-18:49:29.563 1570 Reusing MANIFEST C:\Users\Matias\AppData\Local\Temp\flutter_tools.a24b7055\flutter_tools_chrome_device.7ec1860b\Default\Asset Store\assets.db/MANIFEST-000001
+2024/10/06-18:49:29.567 1570 Recovering log #4
+2024/10/06-18:49:29.569 1570 Level-0 table #6: started
+2024/10/06-18:49:29.584 1570 Level-0 table #6: 238916 bytes OK
+2024/10/06-18:49:29.606 1570 Delete type=0 #4

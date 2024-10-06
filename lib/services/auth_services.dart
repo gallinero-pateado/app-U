@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class AuthService {
   final String _baseUrl = 'http://localhost:8080';
-  final String _apiKey = 'e8e67a88eb2227ef34586ec2f5c362e4f4a150ad';
+  final String _apiKey = 'AIzaSyDwYTh9EH6Q7C3RGaKcM2Jkc63Q4Mbv3wM';
   // Registro de usuario con nombres, apellidos, email y contraseña
   Future<Map<String, dynamic>?> signUpWithDetails(
       String firstName, String lastName, String email, String password) async {

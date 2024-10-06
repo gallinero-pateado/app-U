@@ -16,8 +16,8 @@ void main() async {
   // Inicialización de Supabase
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
-    url: 'aws-0-sa-east-1.pooler.supabase.com',
-    anonKey: 'fytxid-0xamfY-kersev',
+    url: 'https://cwarjxvkdpaoolwwatve.supabase.co',
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN3YXJqeHZrZHBhb29sd3dhdHZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjYxNzgzMTIsImV4cCI6MjA0MTc1NDMxMn0.a9iD-vJAzl0jZO_xiei0iyIsH7yKuP2x6ZbwH3zXPG8',
   );
 
 await Firebase.initializeApp(
