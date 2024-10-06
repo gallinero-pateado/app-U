@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 //Importaciones para Supabase
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+
 //Pantallas de la aplicación
 import 'package:Ulink/Screens/login.dart';
 import 'package:Ulink/Screens/registro.dart';
@@ -15,6 +19,11 @@ void main() async {
     url: 'aws-0-sa-east-1.pooler.supabase.com',
     anonKey: 'fytxid-0xamfY-kersev',
   );
+
+await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
+
 
   runApp(const MyApp());
 }

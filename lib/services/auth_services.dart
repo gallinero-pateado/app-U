@@ -2,10 +2,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class AuthService {
-  final String _baseUrl = 'https://cwarjxvkdpaoolwwatve.supabase.co';
-  final String _apiKey =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN3YXJqeHZrZHBhb29sd3dhdHZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjYxNzgzMTIsImV4cCI6MjA0MTc1NDMxMn0.a9iD-vJAzl0jZO_xiei0iyIsH7yKuP2x6ZbwH3zXPG8';
-
+  final String _baseUrl = 'http://localhost:8080';
+  final String _apiKey = 'e8e67a88eb2227ef34586ec2f5c362e4f4a150ad';
   // Registro de usuario con nombres, apellidos, email y contraseña
   Future<Map<String, dynamic>?> signUpWithDetails(
       String firstName, String lastName, String email, String password) async {
