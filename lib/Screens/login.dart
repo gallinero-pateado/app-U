@@ -142,7 +142,7 @@ class LoginPageState extends State<LoginPage> {
                               bool success = await _signIn();
                               if (success) {
                                 // ignore: use_build_context_synchronously
-                                Navigator.pushNamed(context, '/mainScreen');
+                                //Navigator.pushNamed(context, '/mainScreen');
                               } else {
                                 if (context.mounted) {
                                   ScaffoldMessenger.of(context).showSnackBar(

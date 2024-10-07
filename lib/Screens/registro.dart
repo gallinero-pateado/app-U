@@ -190,13 +190,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
 
     if (response != null) {
-      // Registro exitoso
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Usuario registrado exitosamente')),
-      );
-      Navigator.pushNamed(
-          context, '/login'); // Redirigir a la pantalla de inicio de sesión
+      if (response.containsKey('error')) {
+        // Mostrar mensaje de error proveniente del servidor
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error: ${response['error']}')),
+        );
+      } else {
+        // Registro exitoso
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Usuario registrado exitosamente')),
+        );
+        Navigator.pushNamed(
+            context, '/login'); // Redirigir a la pantalla de inicio de sesión
+      }
     } else {
+      // Error general si no se recibió respuesta del servidor
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Error al registrar usuario')),
       );

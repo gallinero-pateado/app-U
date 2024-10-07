@@ -2,19 +2,18 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class AuthService {
-  final String _baseUrl = 'http://localhost:8080';
+  final String _baseUrl = 'http://127.0.0.1:8080';
   final String _apiKey = 'e8e67a88eb2227ef34586ec2f5c362e4f4a150ad';
   // Registro de usuario con nombres, apellidos, email y contraseña
   Future<Map<String, dynamic>?> signUpWithDetails(
       String firstName, String lastName, String email, String password) async {
     final url =
-        Uri.parse('$_baseUrl/register'); //endpoint de registro de usuario
+        Uri.parse('$_baseUrl/register'); // Endpoint de registro de usuario
     try {
       final response = await http.post(
         url,
         headers: {
           'Content-Type': 'application/json',
-          'apikey': _apiKey, // Aquí incluimos el API Key
         },
         body: jsonEncode({
           'nombres': firstName,
@@ -24,16 +23,12 @@ class AuthService {
         }),
       );
 
-      if (response.statusCode == 200) {
-        return jsonDecode(response.body);
-      } else {
-        print(
-            "Error al registrar usuario: Código de estado: ${response.statusCode}, Respuesta: ${response.body}");
-        return null;
-      }
+      // Aquí siempre retornamos la respuesta, sea éxito o error
+      return jsonDecode(response.body);
     } catch (e) {
       print("Error al registrar usuario: $e");
-      return null;
+      // Retorna un mensaje de error genérico si la excepción es lanzada
+      return {'error': 'Error al registrar usuario'};
     }
   }
 
@@ -46,7 +41,6 @@ class AuthService {
         url,
         headers: {
           'Content-Type': 'application/json',
-          'apikey': _apiKey, // Aquí incluimos el API Key
         },
         body: jsonEncode({'email': email, 'password': password}),
       );
@@ -75,7 +69,6 @@ class AuthService {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
-          'apikey': _apiKey, // Aquí incluimos el API Key
         },
         body: jsonEncode(profileData),
       );
@@ -101,7 +94,6 @@ class AuthService {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
-          'apikey': _apiKey, // Aquí incluimos el API Key
         },
       );
 
