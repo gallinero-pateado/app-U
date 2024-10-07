@@ -1,3 +1,9 @@
-2024/10/06-21:04:32.671 7c1c Reusing MANIFEST C:\Users\byron\AppData\Local\Temp\flutter_tools.f048a22d\flutter_tools_chrome_device.915092be\Default\Local Storage\leveldb/MANIFEST-000001
-2024/10/06-21:04:32.693 7c1c Recovering log #3
-2024/10/06-21:04:32.708 7c1c Reusing old log C:\Users\byron\AppData\Local\Temp\flutter_tools.f048a22d\flutter_tools_chrome_device.915092be\Default\Local Storage\leveldb/000003.log 
+<<<<<<< HEAD
+2024/10/06-21:59:41.308 5e6c Reusing MANIFEST C:\Users\byron\AppData\Local\Temp\flutter_tools.aede5eea\flutter_tools_chrome_device.a8f27da7\Default\Local Storage\leveldb/MANIFEST-000001
+2024/10/06-21:59:41.331 5e6c Recovering log #3
+2024/10/06-21:59:41.334 5e6c Reusing old log C:\Users\byron\AppData\Local\Temp\flutter_tools.aede5eea\flutter_tools_chrome_device.a8f27da7\Default\Local Storage\leveldb/000003.log 
+=======
+2024/10/06-19:54:32.327 5a04 Reusing MANIFEST C:\Users\Matias\AppData\Local\Temp\flutter_tools.94c73666\flutter_tools_chrome_device.ecadd0d1\Default\Local Storage\leveldb/MANIFEST-000001
+2024/10/06-19:54:32.341 5a04 Recovering log #3
+2024/10/06-19:54:32.345 5a04 Reusing old log C:\Users\Matias\AppData\Local\Temp\flutter_tools.94c73666\flutter_tools_chrome_device.ecadd0d1\Default\Local Storage\leveldb/000003.log 
+>>>>>>> e5b2480ee94da3e2be94c49d7fe59b717ce3900b

@@ -1,3 +1,9 @@
-2024/10/06-21:04:32.200 8060 Reusing MANIFEST C:\Users\byron\AppData\Local\Temp\flutter_tools.f048a22d\flutter_tools_chrome_device.915092be\Default\Service Worker\Database/MANIFEST-000001
-2024/10/06-21:04:32.201 8060 Recovering log #3
-2024/10/06-21:04:32.201 8060 Reusing old log C:\Users\byron\AppData\Local\Temp\flutter_tools.f048a22d\flutter_tools_chrome_device.915092be\Default\Service Worker\Database/000003.log 
+<<<<<<< HEAD
+2024/10/06-21:59:41.193 5810 Reusing MANIFEST C:\Users\byron\AppData\Local\Temp\flutter_tools.aede5eea\flutter_tools_chrome_device.a8f27da7\Default\Service Worker\Database/MANIFEST-000001
+2024/10/06-21:59:41.194 5810 Recovering log #3
+2024/10/06-21:59:41.194 5810 Reusing old log C:\Users\byron\AppData\Local\Temp\flutter_tools.aede5eea\flutter_tools_chrome_device.a8f27da7\Default\Service Worker\Database/000003.log 
+=======
+2024/10/06-19:54:32.234 3fb4 Reusing MANIFEST C:\Users\Matias\AppData\Local\Temp\flutter_tools.94c73666\flutter_tools_chrome_device.ecadd0d1\Default\Service Worker\Database/MANIFEST-000001
+2024/10/06-19:54:32.235 3fb4 Recovering log #3
+2024/10/06-19:54:32.235 3fb4 Reusing old log C:\Users\Matias\AppData\Local\Temp\flutter_tools.94c73666\flutter_tools_chrome_device.ecadd0d1\Default\Service Worker\Database/000003.log 
+>>>>>>> e5b2480ee94da3e2be94c49d7fe59b717ce3900b
